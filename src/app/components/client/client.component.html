@@ -1,0 +1,20 @@
+<div class="all-products">
+<div class="firstCards">
+<app-card *ngFor="let product of allProducts"
+          [productCard]="product">
+</app-card>
+</div>
+</div>
+<div class="bag">
+  <div *ngIf="!isBagOpened" (click)="isBagOpened = true">
+    <img src="assets/images/bag.png">
+  </div>
+  <div *ngIf="isBagOpened" (click)="isBagOpened = false" class="cross">
+    <app-bag></app-bag>
+    <img src="assets/images/cross.png" class="cross">
+  </div>
+</div>
+
+
+
+

@@ -1,0 +1,10 @@
+<mat-card class="example-card">
+  <img mat-card-image ngSrc="{{productCard.photo}}" width="300" height="300" class="productPhoto">
+  <mat-card-content>
+    <p>{{productCard.name}}</p>
+    <p>{{productCard.price + " ₽"}}</p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-button color="primary" (click) = "bagService.addProductsInBag(productCard)">В корзину</button>
+  </mat-card-actions>
+</mat-card>

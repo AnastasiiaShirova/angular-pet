@@ -1,0 +1,31 @@
+.firstCards {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex-direction: row;
+  padding-top: 80px;
+  gap: 15px;
+}
+
+.bag {
+  position: fixed;
+  bottom: 20px;
+  right: 40px;
+}
+
+img {
+  width: 60px;
+  height: auto;
+  border-radius: 50%;
+  border: 3px solid rgb(101, 217, 52);
+}
+
+.cross {
+  text-align: end;
+  margin: 5px 0 0 0;
+}
+
+.all-products {
+  width: 100%;
+  display: flex;
+}

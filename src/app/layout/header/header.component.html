@@ -1,0 +1,17 @@
+<header>
+  <img src="assets/images/guava.jpg" class="logo" routerLink="/client">
+  <div class="menu">
+    <button mat-raised-button color="primary" class="category-button"
+            *ngFor="let category of Categories| keyvalue"
+            (click)="sheetService.selectCategory.next(category.value)"
+    >{{ category.value }}
+    </button>
+  </div>
+  <div class="seller-button">
+    <mat-slide-toggle [(ngModel)]="isSeller" color="primary" routerLink="{{isSeller ? '/seller':'/client'}}">
+      <div class="switch-seller-button">
+        {{ isSeller ? 'Я продавец' : 'Я покупатель' }}
+      </div>
+    </mat-slide-toggle>
+  </div>
+</header>

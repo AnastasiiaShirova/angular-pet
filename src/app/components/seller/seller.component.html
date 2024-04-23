@@ -1,0 +1,40 @@
+<form [formGroup]="sellerForm" class="sellerForm">
+
+  <mat-form-field>
+    <mat-label>Название товара</mat-label>
+    <input matInput formControlName="name">
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Ссылка на фото товара</mat-label>
+    <input matInput formControlName="photo">
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Вес товара</mat-label>
+    <input matInput formControlName="weight">
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Цена товара</mat-label>
+    <input matInput formControlName="price">
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Количество товара</mat-label>
+    <input matInput formControlName="quantity">
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Категория товара</mat-label>
+    <mat-select formControlName="category">
+      <mat-option *ngFor="let category of Categories | keyvalue"
+        value="{{category.value}}">{{category.value}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <button mat-raised-button color="primary"
+          (click)="addItem()"
+  >Добавить товар
+  </button>
+</form>

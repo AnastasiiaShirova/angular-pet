@@ -1,0 +1,32 @@
+<mat-table [dataSource]="bagService.productsInBag|keyvalue" class="mat-elevation-z8">
+  <div class="bag-table">
+    <!-- Name Column -->
+    <ng-container matColumnDef="name">
+      <mat-header-cell *matHeaderCellDef> Название товара </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.key}} </mat-cell>
+      <mat-footer-cell *matFooterCellDef>К оплате:</mat-footer-cell>
+    </ng-container>
+
+    <!-- Weight Column -->
+    <ng-container matColumnDef="quantity">
+      <mat-header-cell *matHeaderCellDef> Количество товара </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.value.quantity}} </mat-cell>
+      <mat-footer-cell *matFooterCellDef></mat-footer-cell>
+    </ng-container>
+
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="price">
+      <mat-header-cell *matHeaderCellDef> Цена </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.value.price * element.value.quantity + " ₽"}} </mat-cell>
+      <mat-footer-cell *matFooterCellDef>{{bagService.getTotalSum() + " ₽"}}</mat-footer-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    <mat-footer-row *matFooterRowDef="displayedColumns"></mat-footer-row>
+  </div>
+  </mat-table>
+<div class="make-order">
+  <button mat-raised-button color="primary" class="button-make-order">Оформить заказ</button>
+</div>
+
