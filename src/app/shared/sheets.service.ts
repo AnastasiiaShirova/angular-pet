@@ -1,6 +1,6 @@
 import {Injectable} from "@angular/core";
 import {HttpClient} from "@angular/common/http";
-import {BehaviorSubject, filter, map, Observable, Subject, switchMap} from "rxjs";
+import {BehaviorSubject, catchError, filter, map, Observable, of, Subject, switchMap} from "rxjs";
 import {ProductInfo} from "./interfaces/product-card.interface";
 import {Categories} from "./enums/categories.enum";
 
@@ -24,7 +24,22 @@ export class SheetsService {
           ...item, id: +item.id,
           availability: !!item.availability, quantity: +item.quantity, price: +item.price
         }))
-      ));
+      ),
+      catchError(() => {
+        return of([
+          {
+            id: 15,
+            name: "Мандарины",
+            photo: "https://frutsnab.ru/wa-data/public/shop/products/62/00/62/images/160/160.970.jpg",
+            weight: "600 гр",
+            price: 180,
+            availability: true,
+            quantity: 18,
+            category: "Фрукты"
+          },
+        ])
+      }),
+    );
   }
 
   filterSheet(category: Categories | null): Observable<any> {

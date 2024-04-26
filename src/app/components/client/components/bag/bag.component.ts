@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, Input} from '@angular/core';
 import {BagService} from "../../../../shared/services/bag.service";
 import {
   MatCell,
@@ -9,8 +9,9 @@ import {
   MatHeaderRow, MatHeaderRowDef, MatRow, MatRowDef,
   MatTable
 } from "@angular/material/table";
-import {KeyValuePipe} from "@angular/common";
+import {KeyValuePipe, NgIf} from "@angular/common";
 import {MatButton} from "@angular/material/button";
+import {RouterLink} from "@angular/router";
 
 @Component({
   selector: 'app-bag',
@@ -31,12 +32,15 @@ import {MatButton} from "@angular/material/button";
     MatFooterRowDef,
     MatFooterCell,
     MatFooterCellDef,
-    MatButton
+    MatButton,
+    NgIf,
+    RouterLink
   ],
   templateUrl: './bag.component.html',
   styleUrl: './bag.component.scss'
 })
 export class BagComponent {
-  constructor(protected bagService: BagService) {}
+  @Input() isButtonHidden: boolean = false;
+  constructor(protected bagService: BagService){}
   displayedColumns: string[] = ['name', 'quantity', 'price'];
 }

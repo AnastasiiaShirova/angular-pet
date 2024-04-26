@@ -1,0 +1,56 @@
+.order {
+  padding-top: 100px;
+  padding-bottom: 20px;
+}
+
+.text {
+  text-align: center;
+  font-size: 20px;
+  margin: 25px 0;
+}
+
+.check-bag {
+  width: 40%;
+  margin: auto;
+  padding-top: 20px;
+}
+
+.order-form {
+  width: 80%;
+  margin: auto;
+  padding-top: 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+.client-section {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+mat-form-field {
+  width: 30%;
+}
+
+.address {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.information-about-delivery {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.make-order-button {
+  width: 20%;
+  height: 45px;
+  font-size: 20px;
+  margin: auto;
+}
+
+
