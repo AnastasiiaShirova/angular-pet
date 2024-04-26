@@ -27,6 +27,6 @@
   </div>
   </mat-table>
 <div class="make-order">
-  <button mat-raised-button color="primary" class="button-make-order">Оформить заказ</button>
+  <button mat-raised-button color="primary" class="button-make-order" *ngIf="!isButtonHidden" routerLink="/order">Оформить заказ</button>
 </div>
 

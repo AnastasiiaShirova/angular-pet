@@ -1,0 +1,78 @@
+<div class="order">
+<p class="text">Пожалуйста, проверьте содержимое заказа</p>
+<div class="check-bag">
+<app-bag [isButtonHidden]="true"></app-bag>
+</div>
+  <div>
+  <form [formGroup]= "orderForm" class="order-form">
+    <p class="text">Укажите данные для доставки</p>
+    <div class="client-section">
+    <mat-form-field>
+      <mat-label>Ваше имя</mat-label>
+      <input matInput formControlName="clientName">
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Телефон</mat-label>
+      <span matTextPrefix>+7 &nbsp;</span>
+      <input type="tel" matInput formControlName="phone">
+      <mat-icon matSuffix>mode_edit</mat-icon>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Адрес электронной почты</mat-label>
+      <input type="email" matInput formControlName="email">
+    </mat-form-field>
+    </div>
+
+    <p class="text">Адрес</p>
+    <div class="address">
+    <mat-form-field>
+      <mat-label>Улица</mat-label>
+      <input matInput formControlName="street">
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Дом</mat-label>
+      <input matInput formControlName="houseNumber">
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Корпус</mat-label>
+      <input matInput formControlName="corps">
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Подъезд</mat-label>
+      <input matInput formControlName="entrance">
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Этаж</mat-label>
+      <input matInput formControlName="floor">
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Квартира</mat-label>
+      <input matInput formControlName="flatNumber">
+    </mat-form-field>
+    </div>
+
+    <p class="text">Информация о доставке</p>
+    <div class="information-about-delivery">
+    <mat-form-field class="example-full-width">
+      <mat-label>Выберите дату доставки</mat-label>
+      <input matInput [matDatepicker]="picker" formControlName="dateOfDelivery">
+      <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker touchUi #picker></mat-datepicker>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Комментарий к заказу</mat-label>
+      <textarea matInput formControlName="comment"></textarea>
+    </mat-form-field>
+    </div>
+    <button mat-raised-button color="primary" class="make-order-button">Оформить заказ</button>
+  </form>
+  </div>
+</div>
