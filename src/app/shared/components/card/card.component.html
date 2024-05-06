@@ -1,10 +1,23 @@
 <mat-card class="example-card">
-  <img mat-card-image ngSrc="{{productCard.photo}}" width="300" height="300" class="productPhoto">
+  <img mat-card-image ngSrc="{{productCard.photo}}" width="300" height="300" class="productPhoto" alt="">
   <mat-card-content>
-    <p>{{productCard.name}}</p>
-    <p>{{productCard.price + " ₽"}}</p>
+    <p>{{ productCard.name }}</p>
+    <p>{{ productCard.price + " ₽" }}</p>
   </mat-card-content>
-  <mat-card-actions>
-    <button mat-button color="primary" (click) = "bagService.addProductsInBag(productCard)">В корзину</button>
+  <mat-card-actions class="card-buttons">
+    <button mat-button color="primary" (click)="bagService.addProductsInBag(productCard)"
+            *ngIf="!bagService.productsInBag.has(productCard.name)" class="add">В корзину
+    </button>
+    <div *ngIf="bagService.productsInBag.has(productCard.name)" class="quantity-buttons">
+      <button (click)="bagService.deleteProductsFromBag(productCard)" mat-raised-button color="primary"
+              class="quantity">-
+      </button>
+      <div class="quantity">{{ bagService.productsInBag.get(productCard.name)?.quantity }}</div>
+      <button
+        (click)="bagService.addProductsInBag(productCard)"
+        [disabled]="bagService.productsInBag.has(productCard.name) && bagService.productsInBag.get(productCard.name)!.quantity >= productCard.quantity"
+        mat-raised-button color="primary" class="quantity">+
+      </button>
+    </div>
   </mat-card-actions>
 </mat-card>

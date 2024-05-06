@@ -18,3 +18,24 @@ mat-card {
   object-fit: contain
 }
 
+.quantity-buttons {
+  width: 60%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: auto;
+}
+
+.add {
+  margin-left: auto;
+  font-size: 15px;
+}
+
+.quantity {
+font-size: 20px;
+}
+
+.card-buttons {
+  width: 100%;
+}
+
