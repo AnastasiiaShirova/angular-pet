@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {ChangeDetectionStrategy, Component} from '@angular/core';
 import {FormControl, FormGroup, ReactiveFormsModule, Validators} from "@angular/forms";
 import {MatFormField, MatFormFieldModule} from "@angular/material/form-field";
 import {MatInput, MatInputModule} from "@angular/material/input";
@@ -23,7 +23,8 @@ import {MatSnackBar} from "@angular/material/snack-bar";
     MatButton
   ],
   templateUrl: './seller.component.html',
-  styleUrl: './seller.component.scss'
+  styleUrl: './seller.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class SellerComponent {
   sellerForm: FormGroup = new FormGroup({

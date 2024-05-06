@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {ChangeDetectionStrategy, Component, Input} from '@angular/core';
 import {BagService} from "../../../../shared/services/bag.service";
 import {
   MatCell,
@@ -37,7 +37,8 @@ import {RouterLink} from "@angular/router";
     RouterLink
   ],
   templateUrl: './bag.component.html',
-  styleUrl: './bag.component.scss'
+  styleUrl: './bag.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class BagComponent {
   @Input() isButtonHidden: boolean = false;
