@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {ChangeDetectionStrategy, Component} from '@angular/core';
 import {MatButton} from "@angular/material/button";
 import {Categories} from "../../shared/enums/categories.enum";
 import {KeyValuePipe, NgForOf, NgIf} from "@angular/common";
@@ -20,7 +20,8 @@ import {SheetsService} from "../../shared/sheets.service";
     RouterLink
   ],
   templateUrl: './header.component.html',
-  styleUrl: './header.component.scss'
+  styleUrl: './header.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class HeaderComponent {
  constructor(public sheetService: SheetsService) {

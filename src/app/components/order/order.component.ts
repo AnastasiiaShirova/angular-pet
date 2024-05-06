@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {ChangeDetectionStrategy, Component} from '@angular/core';
 import {BagService} from "../../shared/services/bag.service";
 import {BagComponent} from "../client/components/bag/bag.component";
 import {FormControl, FormGroup, ReactiveFormsModule, Validators} from "@angular/forms";
@@ -30,7 +30,8 @@ import {MatButton} from "@angular/material/button";
   ],
   providers: [provideNativeDateAdapter(), { provide: MAT_DATE_LOCALE, useValue: 'en-GB' }],
   templateUrl: './order.component.html',
-  styleUrl: './order.component.scss'
+  styleUrl: './order.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class OrderComponent {
   orderForm: FormGroup = new FormGroup({
