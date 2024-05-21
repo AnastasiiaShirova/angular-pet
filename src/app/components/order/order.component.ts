@@ -48,5 +48,8 @@ export class OrderComponent {
     comment: new FormControl(null)
   })
   constructor(protected bagService: BagService) {}
-
+ isMadeOrder: boolean = false;
+  madeOrder () {
+    this.isMadeOrder = true;
+  }
 }
