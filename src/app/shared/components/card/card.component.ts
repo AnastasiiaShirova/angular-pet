@@ -4,7 +4,7 @@ import {MatButtonModule} from "@angular/material/button";
 import {ProductInfo} from "../../interfaces/product-card.interface";
 import {NgIf, NgOptimizedImage} from "@angular/common";
 import {BagService} from "../../services/bag.service";
-import {SheetsService} from "../../sheets.service";
+import {SheetsService} from "../../services/sheets.service";
 
 @Component({
   selector: 'app-card',

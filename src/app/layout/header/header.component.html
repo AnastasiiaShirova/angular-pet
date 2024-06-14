@@ -8,10 +8,9 @@
     </button>
   </div>
   <div class="seller-button">
-    <mat-slide-toggle [(ngModel)]="isSeller" color="primary" routerLink="{{isSeller ? '/seller':'/client'}}">
-      <div class="switch-seller-button">
-        {{ isSeller ? 'Я продавец' : 'Я покупатель' }}
-      </div>
-    </mat-slide-toggle>
+    <button mat-raised-button color="primary" class="category-button"
+            routerLink="/login"
+    >Я продавец
+    </button>
   </div>
 </header>

@@ -5,7 +5,7 @@ import {KeyValuePipe, NgForOf, NgIf} from "@angular/common";
 import {MatSlideToggle} from "@angular/material/slide-toggle";
 import {FormsModule} from "@angular/forms";
 import {RouterLink} from "@angular/router";
-import {SheetsService} from "../../shared/sheets.service";
+import {SheetsService} from "../../shared/services/sheets.service";
 
 @Component({
   selector: 'app-header',
