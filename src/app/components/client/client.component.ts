@@ -1,9 +1,10 @@
 import {ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit} from '@angular/core';
 import {CardComponent} from "../../shared/components/card/card.component";
 import {ProductInfo} from "../../shared/interfaces/product-card.interface";
-import {SheetsService} from "../../shared/sheets.service";
+import {SheetsService} from "../../shared/services/sheets.service";
 import {NgForOf, NgIf} from "@angular/common";
 import {BagComponent} from "./components/bag/bag.component";
+import {HeaderComponent} from "../../layout/header/header.component";
 
 @Component({
   selector: 'app-client',
@@ -12,7 +13,8 @@ import {BagComponent} from "./components/bag/bag.component";
     CardComponent,
     NgForOf,
     NgIf,
-    BagComponent
+    BagComponent,
+    HeaderComponent
   ],
   templateUrl: './client.component.html',
   styleUrl: './client.component.scss',
@@ -24,6 +26,7 @@ export class ClientComponent implements OnInit {
 
   allProducts: ProductInfo[] = [];
   isBagOpened = false;
+
   ngOnInit() {
     this.sheetsService.filteredCategories.subscribe((val) => {
         this.allProducts = val;

@@ -1,8 +1,8 @@
 import {Injectable} from "@angular/core";
 import {HttpClient} from "@angular/common/http";
-import {BehaviorSubject, catchError, filter, map, Observable, of, Subject, switchMap} from "rxjs";
-import {ProductInfo} from "./interfaces/product-card.interface";
-import {Categories} from "./enums/categories.enum";
+import {BehaviorSubject, catchError, map, Observable, of, switchMap} from "rxjs";
+import {ProductInfo} from "../interfaces/product-card.interface";
+import {Categories} from "../enums/categories.enum";
 
 const SHEET_URL = 'https://sheetdb.io/api/v1/9j1pa1if6s2s7'
 @Injectable({
